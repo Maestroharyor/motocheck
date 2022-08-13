@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import "react-native-gesture-handler";
+
+// Components
+import HomeScreen from "./screens/HomeScreen";
+import { Provider as PaperProvider } from "react-native-paper";
+
+// Datas and Functions
+import { RootDrawerParamList } from "./data/dataTypes";
+import SideDrawer from "./components/shared/SideDrawer";
+
+const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <NavigationContainer>
+        <Drawer.Navigator
+          initialRouteName="Home"
+          drawerContent={(props) => <SideDrawer drawerProps={props} />}
+        >
+          <Drawer.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
