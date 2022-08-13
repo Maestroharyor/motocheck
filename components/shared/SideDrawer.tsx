@@ -1,6 +1,6 @@
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { DrawerContentComponentProps } from "@react-navigation/drawer";
-import React from "react";
 import { Image } from "react-native";
 import { Avatar } from "react-native-paper";
 

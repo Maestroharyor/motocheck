@@ -1,7 +1,9 @@
+import React from "react";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
-import React from "react";
 import { Ionicons } from "@expo/vector-icons";
+
+// Functions and Data
 import { checkListDataType } from "../../data/dataTypes";
 
 type Props = {

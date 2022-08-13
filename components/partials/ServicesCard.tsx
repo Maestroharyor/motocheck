@@ -1,8 +1,9 @@
+import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import { Card, Paragraph } from "react-native-paper";
-import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
 
+// Function and Data
 import { servicesDataType } from "../../data/dataTypes";
 
 type Props = {
